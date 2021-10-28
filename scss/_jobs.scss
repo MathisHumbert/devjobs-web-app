@@ -1,7 +1,12 @@
 .jobs {
   width: calc(100vw - 48px);
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto 2rem auto;
+  display: grid;
+  gap: 3rem;
+  height: 108rem;
+  padding-top: 25px;
+  overflow: hidden;
+  transition: height 0.4s linear;
 
   .job {
     background: $primary-color;
@@ -10,7 +15,6 @@
     border-radius: 6px;
 
     &-img {
-      background: #e99210;
       width: 50px;
       height: 50px;
       max-height: 50px;

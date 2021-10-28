@@ -16,3 +16,22 @@ body {
   height: 136px;
   object-fit: cover;
 }
+
+.load-more {
+  display: block;
+  background: $color-blue;
+  border: none;
+  height: 48px;
+  width: 141px;
+  color: $color-white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-blue-hover;
+  }
+}

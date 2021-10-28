@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Kumbh Sans', sans-serif;
+  transition: all 0.4s ease-in-out;
 }
 
 h3 {
@@ -21,7 +22,11 @@ p {
   font-size: 16px;
   line-height: 26px;
 }
-
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 :root {
   --primary-color: #fff;
   --secondary-color: #19202d;
@@ -37,6 +42,8 @@ html.dark {
 }
 
 $color-blue: #5964e0;
+$color-blue-hover: #939bf4;
+$color-white: #fff;
 $primary-color: var(--primary-color);
 $secondary-color: var(--secondary-color);
 $ternary-color: var(--ternary-color);

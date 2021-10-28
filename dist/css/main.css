@@ -5,6 +5,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Kumbh Sans', sans-serif;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 h3 {
@@ -82,10 +84,10 @@ nav .toggle-container .toggle-slide .toggle-circle {
   height: 14px;
   border-radius: 50%;
   background: #5964e0;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+nav .toggle-container .toggle-slide:hover .toggle-circle {
+  background: #939bf4;
 }
 
 nav .toggle-container .active .toggle-circle {
@@ -114,36 +116,6 @@ header .form-1 {
           align-items: center;
   gap: 1rem;
   padding: 0 1rem;
-}
-
-header .form-1 input {
-  width: 100%;
-  height: 80%;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: var(--secondary-color);
-  background: transparent;
-}
-
-header .form-1 input:focus {
-  outline: none;
-}
-
-header .form-1 input::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-
-header .form-1 input:-ms-input-placeholder {
-  opacity: 0.5;
-}
-
-header .form-1 input::-ms-input-placeholder {
-  opacity: 0.5;
-}
-
-header .form-1 input::placeholder {
-  opacity: 0.5;
 }
 
 header .form-1 .search-btn {
@@ -182,6 +154,36 @@ header .form-1 .filter-btn {
   fill: var(--secondary-color);
 }
 
+input[type='text'] {
+  width: 100%;
+  height: 80%;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--secondary-color);
+  background: transparent;
+}
+
+input[type='text']:focus {
+  outline: none;
+}
+
+input[type='text']::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+input[type='text']:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+input[type='text']::-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+input[type='text']::placeholder {
+  opacity: 0.5;
+}
+
 .form-container {
   position: fixed;
   top: 0;
@@ -202,10 +204,10 @@ header .form-1 .filter-btn {
           justify-content: center;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 
 .form-container.open {
@@ -215,7 +217,100 @@ header .form-1 .filter-btn {
 
 .form-container .container {
   background: var(--bg-color);
+  width: calc(100vw - 48px);
+  border-radius: 5px;
+}
+
+.form-container .form-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  padding: 24px;
+  border-bottom: 1px solid rgba(110, 128, 152, 0.2);
+}
+
+.form-container .form-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  padding: 24px;
+}
+
+.form-container .form-3 label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.form-container .form-3 input[type='checkbox'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: rgba(25, 32, 45, 0.1);
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -webkit-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.form-container .form-3 input[type='checkbox']::before {
+  content: '';
+  width: 12px;
+  height: 9px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  background: #fff;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.form-container .form-3 input[type='checkbox']:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.form-container .form-3 input[type='checkbox']:checked {
+  background: #5964e0;
+}
+
+.form-container .submit-btn {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  margin-bottom: 24px;
   padding: 1rem;
+  background: #5964e0;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-container .submit-btn:hover {
+  background: #939bf4;
 }
 
 .jobs {

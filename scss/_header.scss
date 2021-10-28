@@ -15,33 +15,13 @@ header {
     gap: 1rem;
     padding: 0 1rem;
 
-    input {
-      width: 100%;
-      height: 80%;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: $secondary-color;
-      background: transparent;
-
-      &:focus {
-        outline: none;
-      }
-
-      &::placeholder {
-        opacity: 0.5;
-      }
-    }
-
     .search-btn {
       background: $color-blue;
       width: 100%;
       height: 100%;
       max-height: 48px;
       max-width: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexCenter;
       border-radius: 5px;
       cursor: pointer;
 
@@ -51,7 +31,7 @@ header {
       }
 
       .search-color {
-        fill: #fff;
+        fill: $color-white;
       }
     }
 
@@ -65,6 +45,24 @@ header {
   fill: $secondary-color;
 }
 
+input[type='text'] {
+  width: 100%;
+  height: 80%;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: $secondary-color;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+
 .form-container {
   position: fixed;
   top: 0;
@@ -74,17 +72,88 @@ header {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
   transform: translateY(-100%);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 
   &.open {
     transform: translateY(0);
   }
   .container {
     background: $bg-primary-color;
+    width: calc(100vw - 48px);
+    border-radius: 5px;
+  }
+
+  .form-2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 24px;
+    border-bottom: 1px solid rgba(110, 128, 152, 0.2);
+  }
+
+  .form-3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 24px;
+
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      color: $secondary-color;
+    }
+
+    input[type='checkbox'] {
+      appearance: none;
+      background-color: $color-white;
+      margin: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 3px;
+      background: rgba(25, 32, 45, 0.1);
+      display: grid;
+      place-content: center;
+      transition: background 0.4s ease-in-out;
+      cursor: pointer;
+    }
+
+    input[type='checkbox']::before {
+      content: '';
+      width: 12px;
+      height: 9px;
+      transform: scale(0);
+      transition: transform 0.4s ease-in-out;
+      background: $color-white;
+      transform-origin: bottom left;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    input[type='checkbox']:checked::before {
+      transform: scale(1);
+    }
+    input[type='checkbox']:checked {
+      background: $color-blue;
+    }
+  }
+
+  .submit-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    margin-bottom: 24px;
     padding: 1rem;
+    background: $color-blue;
+    border: none;
+    border-radius: 5px;
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-blue-hover;
+    }
   }
 }

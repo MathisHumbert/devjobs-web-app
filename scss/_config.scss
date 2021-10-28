@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+h4 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
 }
 
 $color-blue: #5964e0;

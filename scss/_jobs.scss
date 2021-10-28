@@ -24,6 +24,15 @@
       transform: translateY(-50%);
     }
 
+    .span-circle {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin: 0 10px;
+      background: $ternary-color;
+      border-radius: 50%;
+    }
+
     p {
       color: $ternary-color;
       margin: 12px 0;

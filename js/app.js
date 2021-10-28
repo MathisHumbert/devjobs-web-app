@@ -1,14 +1,12 @@
+// import
+import slideBtnAndColor from './utils/colorSwitch.js';
+import { displayFilter } from './utils/toggleFilter.js';
+
+// get elements
 const slideBtn = document.querySelector('.toggle-slide');
-const html = document.querySelector('html');
+const filterBtn = document.querySelector('.filter-btn');
+const formContainer = document.querySelector('.form-container');
 
+// events
 slideBtn.addEventListener('click', slideBtnAndColor);
-
-function slideBtnAndColor(e) {
-  if (slideBtn.classList.contains('active')) {
-    slideBtn.classList.remove('active');
-    html.classList.remove('dark');
-  } else {
-    slideBtn.classList.add('active');
-    html.classList.add('dark');
-  }
-}
+filterBtn.addEventListener('click', displayFilter);

@@ -1,0 +1,41 @@
+.jobs {
+  width: calc(100vw - 48px);
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  .job {
+    background: $primary-color;
+    padding: 2rem;
+    position: relative;
+    border-radius: 6px;
+
+    &-img {
+      background: #e99210;
+      width: 50px;
+      height: 50px;
+      max-height: 50px;
+      max-width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      position: absolute;
+      top: 0;
+      transform: translateY(-50%);
+    }
+
+    p {
+      color: $ternary-color;
+      margin: 12px 0;
+    }
+
+    h3 {
+      color: $secondary-color;
+    }
+
+    h4 {
+      color: $color-blue;
+      margin-top: 3rem;
+    }
+  }
+}

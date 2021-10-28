@@ -1,0 +1,36 @@
+nav {
+  width: calc(100vw - 48px);
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .toggle-slide {
+      width: 48px;
+      height: 24px;
+      border-radius: 12px;
+      background: $primary-color;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .toggle-circle {
+        position: absolute;
+        left: 4px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $color-blue;
+      }
+    }
+    .active .toggle-circle {
+      left: inherit;
+      right: 4px;
+    }
+  }
+}

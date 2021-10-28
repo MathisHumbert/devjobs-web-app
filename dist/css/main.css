@@ -22,6 +22,20 @@ p {
   line-height: 26px;
 }
 
+:root {
+  --primary-color: #fff;
+  --secondary-color: #19202d;
+  --ternary-color: #6e8098;
+  --bg-color: #f2f2f2;
+}
+
+html.dark {
+  --primary-color: #19202d;
+  --secondary-color: #fff;
+  --ternary-color: #9daec2;
+  --bg-color: #121721;
+}
+
 nav {
   width: calc(100vw - 48px);
   margin: 1rem auto;
@@ -58,24 +72,29 @@ nav .toggle-container .toggle-slide {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 nav .toggle-container .toggle-slide .toggle-circle {
   position: absolute;
-  left: 4px;
+  left: 3px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: #5964e0;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 nav .toggle-container .active .toggle-circle {
-  left: inherit;
-  right: 4px;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
 }
 
 header {
-  background: #fff;
+  background: var(--primary-color);
   width: calc(100vw - 48px);
   height: 80px;
   max-height: 80px;
@@ -103,7 +122,8 @@ header .form-1 input {
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #19202d;
+  color: var(--secondary-color);
+  background: transparent;
 }
 
 header .form-1 input:focus {
@@ -158,6 +178,10 @@ header .form-1 .filter-btn {
   cursor: pointer;
 }
 
+.dark .filter-color {
+  fill: var(--secondary-color);
+}
+
 .form-container {
   position: fixed;
   top: 0;
@@ -166,6 +190,7 @@ header .form-1 .filter-btn {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,10 +202,19 @@ header .form-1 .filter-btn {
           justify-content: center;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.form-container.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .form-container .container {
-  background: #f2f2f2;
+  background: var(--bg-color);
   padding: 1rem;
 }
 
@@ -191,7 +225,7 @@ header .form-1 .filter-btn {
 }
 
 .jobs .job {
-  background: #fff;
+  background: var(--primary-color);
   padding: 2rem;
   position: relative;
   border-radius: 6px;
@@ -224,17 +258,17 @@ header .form-1 .filter-btn {
   width: 4px;
   height: 4px;
   margin: 0 10px;
-  background: #6e8098;
+  background: var(--ternary-color);
   border-radius: 50%;
 }
 
 .jobs .job p {
-  color: #6e8098;
+  color: var(--ternary-color);
   margin: 12px 0;
 }
 
 .jobs .job h3 {
-  color: #19202d;
+  color: var(--secondary-color);
 }
 
 .jobs .job h4 {
@@ -243,7 +277,7 @@ header .form-1 .filter-btn {
 }
 
 body {
-  background: #f2f2f2;
+  background: var(--bg-color);
 }
 
 .pattern-header {

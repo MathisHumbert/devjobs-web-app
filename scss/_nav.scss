@@ -14,23 +14,24 @@ nav {
       width: 48px;
       height: 24px;
       border-radius: 12px;
-      background: $primary-color;
+      background: #fff;
       display: flex;
       align-items: center;
       position: relative;
+      cursor: pointer;
 
       .toggle-circle {
         position: absolute;
-        left: 4px;
+        left: 3px;
         width: 14px;
         height: 14px;
         border-radius: 50%;
         background: $color-blue;
+        transition: transform 0.5s ease-in-out;
       }
     }
     .active .toggle-circle {
-      left: inherit;
-      right: 4px;
+      transform: translateX(200%);
     }
   }
 }

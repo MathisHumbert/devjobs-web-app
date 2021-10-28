@@ -22,6 +22,7 @@ header {
       cursor: pointer;
       font-size: 16px;
       color: $secondary-color;
+      background: transparent;
 
       &:focus {
         outline: none;
@@ -50,7 +51,7 @@ header {
       }
 
       .search-color {
-        fill: $primary-color;
+        fill: #fff;
       }
     }
 
@@ -58,6 +59,10 @@ header {
       cursor: pointer;
     }
   }
+}
+
+.dark .filter-color {
+  fill: $secondary-color;
 }
 
 .form-container {
@@ -68,11 +73,16 @@ header {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
 
+  &.open {
+    transform: translateY(0);
+  }
   .container {
     background: $bg-primary-color;
     padding: 1rem;

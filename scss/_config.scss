@@ -22,8 +22,22 @@ p {
   line-height: 26px;
 }
 
+:root {
+  --primary-color: #fff;
+  --secondary-color: #19202d;
+  --ternary-color: #6e8098;
+  --bg-color: #f2f2f2;
+}
+
+html.dark {
+  --primary-color: #19202d;
+  --secondary-color: #fff;
+  --ternary-color: #9daec2;
+  --bg-color: #121721;
+}
+
 $color-blue: #5964e0;
-$primary-color: #fff;
-$secondary-color: #19202d;
-$ternary-color: #6e8098;
-$bg-primary-color: #f2f2f2;
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$ternary-color: var(--ternary-color);
+$bg-primary-color: var(--bg-color);

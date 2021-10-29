@@ -5,9 +5,9 @@ const titleInput = document.querySelector('.filter-title');
 const locationInput = document.querySelector('.filter-location');
 const fullTimeInput = document.querySelector('.checkbox');
 const URL = '../starter-code/data.json';
-let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
 
 function fullTimeDisplay() {
+  let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
   getData(
     URL,
     storedFilter[0] || '',

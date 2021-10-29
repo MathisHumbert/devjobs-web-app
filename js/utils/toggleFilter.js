@@ -1,4 +1,6 @@
 const formContainer = document.querySelector('.form-container');
+const jobsContainer = document.querySelector('.jobs');
+const loadMore = document.querySelector('.load-more');
 
 function displayFilter() {
   formContainer.classList.add('open');
@@ -14,4 +16,19 @@ function removeFilter(e) {
   }
 }
 
-export { displayFilter, removeFilter };
+function heightBtn() {
+  if (!jobsContainer.classList.contains('open')) {
+    jobsContainer.style.maxHeight = '100%';
+    loadMore.textContent = 'Load Less';
+    jobsContainer.classList.add('open');
+  } else {
+    console.log(window.innerWidth);
+    jobsContainer.style.maxHeight = `${
+      window.innerWidth < 768 ? 204 : window.innerWidth < 1440 ? 102 : 68
+    }rem`;
+    loadMore.textContent = 'Load More';
+    jobsContainer.classList.remove('open');
+  }
+}
+
+export { displayFilter, removeFilter, heightBtn };

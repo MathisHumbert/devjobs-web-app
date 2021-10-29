@@ -30,18 +30,19 @@ function filterInputValue() {
 }
 
 function filterDataByTitle(data, value) {
-  data = data.filter((item) => item.position.toLowerCase().includes(value));
-  return data;
+  return data.filter((item) => item.position.toLowerCase().includes(value));
 }
 
 function filterDataByLocation(data, value) {
-  data = data.filter((item) => item.location.toLowerCase().includes(value));
-  return data;
+  return data.filter((item) => item.location.toLowerCase().includes(value));
 }
 
 function filterDataByTime(data) {
-  data = data.filter((item) => item.contract.includes('Full Time'));
-  return data;
+  return data.filter((item) => item.contract.includes('Full Time'));
+}
+
+function filterDataByNumbers(data) {
+  return data.filter((item, idx) => idx < 12);
 }
 
 export {
@@ -50,4 +51,5 @@ export {
   filterDataByTitle,
   filterDataByTime,
   filterInputValue,
+  filterDataByNumbers,
 };

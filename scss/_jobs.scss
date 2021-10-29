@@ -50,3 +50,10 @@
     }
   }
 }
+
+@include tabletDisplay {
+  .jobs {
+    grid-template-columns: 1fr 1fr;
+    width: calc(100vw - 4rem);
+  }
+}

@@ -24,8 +24,6 @@ async function getData(URL, title, location, fullTime) {
   // fulltime filter
   if (fullTime) data = filterDataByTime(data);
 
-  console.log(data);
-
   // if(data.length === 0)
   displayJobs(data);
 }

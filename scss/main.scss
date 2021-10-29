@@ -16,6 +16,33 @@ body {
   width: 100%;
   height: 136px;
   object-fit: cover;
+
+  &.mobile {
+    display: block;
+  }
+
+  &.tablet {
+    display: none;
+  }
+
+  &.desktop {
+    display: none;
+  }
+}
+
+@include tabletDisplay {
+  .pattern-header {
+    width: 100%;
+    height: 160px;
+
+    &.mobile {
+      display: none;
+    }
+
+    &.tablet {
+      display: block;
+    }
+  }
 }
 
 .load-more {

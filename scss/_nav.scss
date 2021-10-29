@@ -38,3 +38,10 @@ nav {
     }
   }
 }
+
+@include tabletDisplay {
+  nav {
+    width: calc(100vw - 6rem);
+    margin: 2rem auto;
+  }
+}

@@ -12,6 +12,12 @@
   }
 }
 
+@mixin desktopDisplay {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;

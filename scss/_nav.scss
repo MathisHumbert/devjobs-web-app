@@ -45,3 +45,10 @@ nav {
     margin: 2rem auto;
   }
 }
+
+@include desktopDisplay {
+  nav {
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
+  }
+}

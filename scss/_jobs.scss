@@ -46,7 +46,7 @@
 
     h4 {
       color: $color-blue;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
   }
 }
@@ -55,5 +55,13 @@
   .jobs {
     grid-template-columns: 1fr 1fr;
     width: calc(100vw - 6rem);
+  }
+}
+
+@include desktopDisplay {
+  .jobs {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
   }
 }

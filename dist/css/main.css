@@ -100,6 +100,13 @@ nav .toggle-container .active .toggle-circle {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  nav {
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
+  }
+}
+
 form {
   display: block;
   background: var(--primary-color);
@@ -394,12 +401,6 @@ input[type='text']::placeholder {
     border-right: 1px solid rgba(110, 128, 152, 0.2);
   }
   .form-container .form-3 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     gap: 1rem;
     padding: 0 1rem;
     width: 75%;
@@ -418,6 +419,33 @@ input[type='text']::placeholder {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+  .only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  form {
+    -ms-grid-columns: 58% 42%;
+        grid-template-columns: 58% 42%;
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
+  }
+  form .only {
+    display: block;
+  }
+  form label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 4px;
+  }
+  form .form-3 {
+    width: 60%;
+  }
+  form .submit-container {
+    width: 40%;
   }
 }
 
@@ -482,7 +510,7 @@ input[type='text']::placeholder {
 
 .jobs .job h4 {
   color: #5964e0;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -490,6 +518,15 @@ input[type='text']::placeholder {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     width: calc(100vw - 6rem);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .jobs {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
   }
 }
 
@@ -522,13 +559,24 @@ body {
 
 @media screen and (min-width: 768px) {
   .pattern-header {
-    width: 100%;
     height: 160px;
   }
   .pattern-header.mobile {
     display: none;
   }
   .pattern-header.tablet {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pattern-header {
+    height: 162px;
+  }
+  .pattern-header.tablet {
+    display: none;
+  }
+  .pattern-header.desktop {
     display: block;
   }
 }

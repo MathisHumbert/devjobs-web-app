@@ -226,8 +226,6 @@ input[type='text'] {
     }
 
     .form-3 {
-      display: flex;
-      align-items: center;
       gap: 1rem;
       padding: 0 1rem;
       width: 75%;
@@ -244,6 +242,35 @@ input[type='text'] {
       width: 25%;
       display: flex;
       justify-content: flex-end;
+    }
+  }
+
+  .only {
+    display: none;
+  }
+}
+
+@include desktopDisplay {
+  form {
+    grid-template-columns: 58% 42%;
+    width: calc(100vw - 8rem);
+    max-width: 1440px;
+
+    .only {
+      display: block;
+    }
+
+    label {
+      display: flex;
+      gap: 4px;
+    }
+
+    .form-3 {
+      width: 60%;
+    }
+
+    .submit-container {
+      width: 40%;
     }
   }
 }

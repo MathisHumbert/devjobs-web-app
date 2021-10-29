@@ -4,6 +4,7 @@ import getData from './displayData.js';
 const titleInput = document.querySelector('.filter-title');
 const locationInput = document.querySelector('.filter-location');
 const fullTimeInput = document.querySelector('.checkbox');
+
 const URL = '../starter-code/data.json';
 
 function fullTimeDisplay() {
@@ -41,15 +42,10 @@ function filterDataByTime(data) {
   return data.filter((item) => item.contract.includes('Full Time'));
 }
 
-function filterDataByNumbers(data) {
-  return data.filter((item, idx) => idx < 12);
-}
-
 export {
   fullTimeDisplay,
   filterDataByLocation,
   filterDataByTitle,
   filterDataByTime,
   filterInputValue,
-  filterDataByNumbers,
 };

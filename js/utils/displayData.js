@@ -2,11 +2,11 @@ import {
   filterDataByLocation,
   filterDataByTime,
   filterDataByTitle,
-  filterDataByNumbers,
 } from './filtersFunction.js';
 
 const jobsContainer = document.querySelector('.jobs');
 const loadMore = document.querySelector('.load-more');
+const noItem = document.querySelector('.no-item');
 
 async function fetchData(URL) {
   const response = await fetch(URL);
@@ -26,8 +26,6 @@ async function getData(URL, title, location, fullTime) {
   // fulltime filter
   if (fullTime) data = filterDataByTime(data);
 
-  // if(data.length === 0)
-
   displayJobs(data);
 }
 
@@ -35,6 +33,8 @@ function displayJobs(data) {
   if (data.length >= 12) loadMore.style.display = 'block';
   else loadMore.style.display = 'none';
 
+  if (data.length === 0) noItem.classList.add('active');
+  else noItem.classList.remove('active');
   // destructuring
   jobsContainer.innerHTML = data
     .map((item) => {

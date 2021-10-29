@@ -27,6 +27,7 @@ nav {
         height: 14px;
         border-radius: 50%;
         background: $color-blue;
+        transition: all 0.4s ease-in-out;
       }
 
       &:hover .toggle-circle {

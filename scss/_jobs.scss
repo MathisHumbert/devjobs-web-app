@@ -9,6 +9,10 @@
   overflow: hidden;
   transition: height 0.4s linear;
 
+  &.animate {
+    animation: newJobs 1.5s ease-in-out;
+  }
+
   .job {
     background: $primary-color;
     padding: 2rem;
@@ -66,5 +70,15 @@
     width: calc(100vw - 8rem);
     max-width: 1440px;
     max-height: 68rem;
+  }
+}
+
+@keyframes newJobs {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

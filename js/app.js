@@ -1,5 +1,10 @@
 // import
-import slideBtnAndColor from './utils/colorSwitch.js';
+import {
+  slideBtnAndColor,
+  jobContainerTransition,
+  darkMode,
+  lightMode,
+} from './utils/colorSwitch.js';
 import { displayFilter, heightBtn } from './utils/toggleFilter.js';
 import { filterInputValue, fullTimeDisplay } from './utils/filtersFunction.js';
 import getData from './utils/displayData.js';
@@ -34,13 +39,21 @@ window.addEventListener('DOMContentLoaded', () => {
   titleInput.value = storedFilter[0];
   locationInput.value = storedFilter[1];
   fullTimeInput.checked = storedFilter[2];
+
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) darkMode();
+
+  if (window.matchMedia('(prefers-color-scheme: light)').matches) lightMode();
 });
 
 // filter on submit
 mainForm.addEventListener('submit', (e) => {
   e.preventDefault();
   filterInputValue();
+  jobContainerTransition();
 });
 
 // filter full time on click
-fullTimeInput.addEventListener('click', fullTimeDisplay);
+fullTimeInput.addEventListener('click', () => {
+  fullTimeDisplay();
+  jobContainerTransition();
+});

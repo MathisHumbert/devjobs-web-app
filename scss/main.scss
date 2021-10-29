@@ -49,6 +49,25 @@ body {
   }
 }
 
+.no-item {
+  background: $primary-color;
+  color: $secondary-color;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  top: 240px;
+  left: 50vw;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
 @include tabletDisplay {
   .pattern-header {
     height: 160px;

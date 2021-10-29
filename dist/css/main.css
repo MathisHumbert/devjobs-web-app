@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
-:root {
-  --primary-color: #fff;
-  --secondary-color: #19202d;
-  --ternary-color: #6e8098;
-  --bg-color: #f4f6f8;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #19202d;
+    --secondary-color: #fff;
+    --ternary-color: #9daec2;
+    --bg-color: #121721;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: #fff;
+    --secondary-color: #19202d;
+    --ternary-color: #6e8098;
+    --bg-color: #f4f6f8;
+  }
 }
 
 html.dark {
@@ -13,12 +24,21 @@ html.dark {
   --bg-color: #121721;
 }
 
+html.light {
+  --primary-color: #fff;
+  --secondary-color: #19202d;
+  --ternary-color: #6e8098;
+  --bg-color: #f4f6f8;
+}
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Kumbh Sans', sans-serif;
+  -webkit-transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 h3 {
@@ -82,6 +102,8 @@ nav .toggle-container .toggle-slide .toggle-circle {
   height: 14px;
   border-radius: 50%;
   background: #5964e0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 nav .toggle-container .toggle-slide:hover .toggle-circle {
@@ -272,7 +294,7 @@ input[type='text']::placeholder {
   width: 24px;
   height: 24px;
   border-radius: 3px;
-  background: rgba(25, 32, 45, 0.1);
+  background: rgba(151, 151, 151, 0.1);
   display: -ms-grid;
   display: grid;
   place-content: center;
@@ -463,6 +485,11 @@ input[type='text']::placeholder {
   transition: height 0.4s linear;
 }
 
+.jobs.animate {
+  -webkit-animation: newJobs 1.5s ease-in-out;
+          animation: newJobs 1.5s ease-in-out;
+}
+
 .jobs .job {
   background: var(--primary-color);
   padding: 2rem;
@@ -533,6 +560,24 @@ input[type='text']::placeholder {
   }
 }
 
+@-webkit-keyframes newJobs {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes newJobs {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   background: var(--bg-color);
 }
@@ -577,6 +622,29 @@ body {
 
 .pattern-header.desktop {
   display: none;
+}
+
+.no-item {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  top: 240px;
+  left: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.no-item.active {
+  opacity: 1;
 }
 
 @media screen and (min-width: 768px) {

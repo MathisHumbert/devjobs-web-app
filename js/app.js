@@ -7,8 +7,7 @@ import getData from './utils/displayData.js';
 // get elements
 const slideBtn = document.querySelector('.toggle-slide');
 const filterBtn = document.querySelector('.filter-btn');
-const jobsContainer = document.querySelector('.jobs');
-const loadMore = document.querySelector('.load-more');
+// const loadMore = document.querySelector('.load-more');
 const mainForm = document.querySelector('.main-form');
 const titleInput = document.querySelector('.filter-title');
 const locationInput = document.querySelector('.filter-location');
@@ -30,10 +29,9 @@ filterBtn.addEventListener('click', displayFilter);
 // });
 
 const URL = '../starter-code/data.json';
-
 let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
-console.log(storedFilter);
 
+// window loaded
 window.addEventListener('DOMContentLoaded', () => {
   getData(
     URL,
@@ -47,9 +45,11 @@ window.addEventListener('DOMContentLoaded', () => {
   fullTimeInput.checked = storedFilter[2];
 });
 
+// filter on submit
 mainForm.addEventListener('submit', (e) => {
   e.preventDefault();
   filterInputValue();
 });
 
+// filter full time on click
 fullTimeInput.addEventListener('click', fullTimeDisplay);

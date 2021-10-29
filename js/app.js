@@ -1,67 +1,55 @@
 // import
 import slideBtnAndColor from './utils/colorSwitch.js';
 import { displayFilter } from './utils/toggleFilter.js';
+import { filterInputValue, fullTimeDisplay } from './utils/filtersFunction.js';
+import getData from './utils/displayData.js';
 
 // get elements
 const slideBtn = document.querySelector('.toggle-slide');
 const filterBtn = document.querySelector('.filter-btn');
 const jobsContainer = document.querySelector('.jobs');
 const loadMore = document.querySelector('.load-more');
+const mainForm = document.querySelector('.main-form');
+const titleInput = document.querySelector('.filter-title');
+const locationInput = document.querySelector('.filter-location');
+const fullTimeInput = document.querySelector('.checkbox');
 
 // events
 slideBtn.addEventListener('click', slideBtnAndColor);
 filterBtn.addEventListener('click', displayFilter);
-loadMore.addEventListener('click', () => {
-  if (!jobsContainer.classList.contains('open')) {
-    jobsContainer.style.height = '100%';
-    loadMore.textContent = 'Load Less';
-    jobsContainer.classList.add('open');
-  } else {
-    jobsContainer.style.height = '108rem';
-    loadMore.textContent = 'Load More';
-    jobsContainer.classList.remove('open');
-  }
-});
+// loadMore.addEventListener('click', () => {
+//   if (!jobsContainer.classList.contains('open')) {
+//     jobsContainer.style.height = '100%';
+//     loadMore.textContent = 'Load Less';
+//     jobsContainer.classList.add('open');
+//   } else {
+//     jobsContainer.style.height = '108rem';
+//     loadMore.textContent = 'Load More';
+//     jobsContainer.classList.remove('open');
+//   }
+// });
 
 const URL = '../starter-code/data.json';
-async function fetchData(URL) {
-  const response = await fetch(URL);
-  const data = await response.json();
-  return data;
-}
 
-async function getData(URL) {
-  let data = await fetchData(URL);
-  displayJobs(data);
-}
-getData(URL);
+let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
+console.log(storedFilter);
 
-function displayJobs(data) {
-  // destructuring
-  jobsContainer.innerHTML = data
-    .map((item) => {
-      let {
-        company,
-        logo,
-        logoBackground,
-        postedAt,
-        contract,
-        position,
-        location,
-        id,
-      } = item;
+window.addEventListener('DOMContentLoaded', () => {
+  getData(
+    URL,
+    storedFilter[0] || '',
+    storedFilter[1] || '',
+    storedFilter[2] || ''
+  );
 
-      return `
-    <article class="job" data-id="${id}">
-        <div class="job-img" style="background: ${logoBackground}">
-          <img src="${logo}" alt="company-logo" />
-        </div>
-        <p>${postedAt} <span class="span-circle"></span> ${contract}</p>
-        <h3>${position}</h3>
-        <p>${company}</p>
-        <h4>${location}</h4>
-      </article>
-    `;
-    })
-    .join('');
-}
+  titleInput.value = storedFilter[0];
+  locationInput.value = storedFilter[1];
+  fullTimeInput.checked = storedFilter[2];
+});
+
+mainForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  filterInputValue();
+});
+
+fullTimeInput.addEventListener('click', fullTimeDisplay);

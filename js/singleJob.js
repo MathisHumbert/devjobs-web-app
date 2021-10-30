@@ -97,11 +97,13 @@ function displayData(data) {
 </article>
 
 <footer class="single-job-footer">
+  <div class="container">
   <div class="single-job-footer-info">
     <h3>${position}</h3>
     <p>Mathis Humbert Inc.</p>
   </div>
   <button class="apply-now">Apply Now</button>
+  </div>
 </footer>
   `;
 }

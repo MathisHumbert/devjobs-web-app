@@ -18,8 +18,8 @@ function fullTimeDisplay() {
 }
 
 function filterInputValue() {
-  const titleValue = titleInput.value;
-  const locationValue = locationInput.value;
+  let titleValue = titleInput.value;
+  let locationValue = locationInput.value;
   const fullTimeValue = fullTimeInput.checked;
 
   localStorage.setItem(
@@ -27,6 +27,7 @@ function filterInputValue() {
     JSON.stringify([titleValue, locationValue, fullTimeValue])
   );
 
+  console.log(titleValue);
   getData(URL, titleValue, locationValue, fullTimeValue);
 }
 

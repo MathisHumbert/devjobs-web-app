@@ -31,14 +31,14 @@ let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
 window.addEventListener('DOMContentLoaded', () => {
   getAllJobs(
     URL,
-    storedFilter[0] || '',
-    storedFilter[1] || '',
-    storedFilter[2] || ''
+    storedFilter === null ? '' : storedFilter[0],
+    storedFilter === null ? '' : storedFilter[1],
+    storedFilter === null ? '' : storedFilter[2]
   );
 
-  titleInput.value = storedFilter[0];
-  locationInput.value = storedFilter[1];
-  fullTimeInput.checked = storedFilter[2];
+  titleInput.value = storedFilter === null ? '' : storedFilter[0];
+  locationInput.value = storedFilter === null ? '' : storedFilter[1];
+  fullTimeInput.checked = storedFilter === null ? '' : storedFilter[2];
 
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) darkMode();
 

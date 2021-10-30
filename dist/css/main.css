@@ -944,6 +944,13 @@ input[type='text']::placeholder {
   .apply-now {
     max-width: 141px;
   }
+  .dark .company-site-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  .dark .company-site-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
 }
 
 @media screen and (min-width: 1440px) {

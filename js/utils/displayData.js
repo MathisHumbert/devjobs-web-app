@@ -50,18 +50,25 @@ function displayJobs(data) {
       } = item;
 
       return `
-    <article class="job" data-id="${id}">
+    <article class="job">
         <div class="job-img" style="background: ${logoBackground}">
           <img src="${logo}" alt="company-logo" />
         </div>
         <p>${postedAt} <span class="span-circle"></span> ${contract}</p>
-        <h3>${position}</h3>
+        <h3><a href="single-job.html" class="job-link" data-id="${id}">${position}</a></h3>
         <p>${company}</p>
         <h4>${location}</h4>
       </article>
     `;
     })
     .join('');
+
+  const singlejob = jobsContainer.querySelectorAll('.job-link');
+  singlejob.forEach((job) =>
+    job.addEventListener('click', (e) =>
+      localStorage.setItem('single-job-id', e.target.dataset.id)
+    )
+  );
 }
 
 export default getData;

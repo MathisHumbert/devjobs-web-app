@@ -1,0 +1,150 @@
+.single-job-header {
+  width: calc(100vw - 48px);
+  margin: 0 auto;
+  margin-top: 70px;
+  background: $primary-color;
+  padding: 2rem;
+  position: relative;
+  border-radius: 6px;
+  text-align: center;
+
+  &-img {
+    width: 50px;
+    height: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    @include flexCenter;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .company-site-btn {
+    width: 147px;
+    height: 48px;
+    background: rgba(89, 100, 224, 0.1);
+    color: $color-blue;
+    font-size: 16px;
+    font-weight: 700;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(89, 100, 224, 0.35);
+    }
+  }
+
+  h3 {
+    margin: 10px 0 5px 0;
+  }
+}
+
+.single-job-content {
+  margin: 2rem auto 4rem auto;
+  width: calc(100vw - 48px);
+  padding: 2rem;
+  background: $primary-color;
+  border-radius: 6px;
+
+  &-header {
+    margin-bottom: 2rem;
+
+    &-info {
+      margin-bottom: 3rem;
+      p {
+        color: #6e8098;
+      }
+
+      .span-circle {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin: 0 10px;
+        background: #6e8098;
+        border-radius: 50%;
+      }
+
+      h3 {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .text {
+    line-height: 26px;
+  }
+
+  .requirements h3,
+  .description h3 {
+    margin: 20px 0;
+  }
+
+  .requirements ul,
+  .description ol {
+    margin-top: 20px;
+    color: $ternary-color;
+    line-height: 26px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .requirements {
+    li {
+      display: flex;
+    }
+
+    li::before {
+      content: '•';
+      color: $color-blue;
+      display: inline-block;
+      font-size: 2rem;
+      margin-right: 20px;
+    }
+  }
+
+  .description {
+    li {
+      display: flex;
+    }
+
+    li::before {
+      content: '1';
+      color: $color-blue;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+  }
+}
+
+.single-job-footer {
+  width: 100vw;
+  background: $primary-color;
+  padding: 24px;
+  &.info {
+    display: none;
+  }
+}
+
+.apply-now {
+  width: 100%;
+  height: 48px;
+  background: $color-blue;
+  color: $secondary-color;
+  font-size: 16px;
+  font-weight: 700;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-blue-hover;
+  }
+}

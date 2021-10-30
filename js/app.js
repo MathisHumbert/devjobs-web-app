@@ -7,7 +7,7 @@ import {
 } from './utils/colorSwitch.js';
 import { displayFilter, heightBtn } from './utils/toggleFilter.js';
 import { filterInputValue, fullTimeDisplay } from './utils/filtersFunction.js';
-import getData from './utils/displayData.js';
+import getAllJobs from './utils/displayData.js';
 
 // get elements
 const slideBtn = document.querySelector('.toggle-slide');
@@ -29,7 +29,7 @@ let storedFilter = JSON.parse(localStorage.getItem('devjobs-filter'));
 
 // window loaded
 window.addEventListener('DOMContentLoaded', () => {
-  getData(
+  getAllJobs(
     URL,
     storedFilter[0] || '',
     storedFilter[1] || '',

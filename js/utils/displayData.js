@@ -55,7 +55,7 @@ function displayJobs(data) {
           <img src="${logo}" alt="company-logo" />
         </div>
         <p>${postedAt} <span class="span-circle"></span> ${contract}</p>
-        <h3><a href="single-job.html" class="job-link" data-id="${id}">${position}</a></h3>
+        <h3><a href="html/single-job.html" class="job-link" data-id="${id}">${position}</a></h3>
         <p>${company}</p>
         <h4>${location}</h4>
       </article>

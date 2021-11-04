@@ -24,7 +24,7 @@ function heightBtn() {
   } else {
     console.log(window.innerWidth);
     jobsContainer.style.maxHeight = `${
-      window.innerWidth < 768 ? 204 : window.innerWidth < 1440 ? 102 : 68
+      window.innerWidth < 768 ? 196 : window.innerWidth < 1440 ? 98 : 65
     }rem`;
     loadMore.textContent = 'Load More';
     jobsContainer.classList.remove('open');
